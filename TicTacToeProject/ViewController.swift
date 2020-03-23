@@ -30,7 +30,6 @@ class ViewController: UIViewController {
     
     @IBAction func buttonZone(_ sender: UIButton) {
         let buttonValue:String? = sender.titleLabel?.text
-        print(buttonValue!)
         
         if(playerTurn == true) {
             sender.setBackgroundImage(UIImage(named: "graphic-O"), for: UIControl.State.normal)
@@ -69,6 +68,17 @@ class ViewController: UIViewController {
         player2Zones.contains(1) && player2Zones.contains(5) && player2Zones.contains(9) ||
         player2Zones.contains(3) && player2Zones.contains(5) && player2Zones.contains(7)) {
             labelPhase.text = "Player 2 Wins!!!"
+        }
+        
+        //Print player Zones
+        print("Player 1 Zone")
+        for i in player1Zones {
+            print(i)
+        }
+        
+        print("Player 2 Zone")
+        for i in player2Zones {
+            print(i)
         }
         
         //Check if game is a tie
